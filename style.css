@@ -1,3 +1,123 @@
+/* ---------- COLOR VARIABLES ---------- */
+:root {
+    /* Light mode */
+    --bg: #fffbf0;
+    --card-bg: #FFD580;
+    --topbar-bg: #c2baa9;
+    --text: #333333;
+    --btn-bg: #FFB347;
+    --btn-text: #333333;
+    --btn-hover: #FFA500;
+    --border: #caa863;
+}
+
+[data-theme="dark"] {
+    --bg: #1E1E1E;
+    --card-bg: #2C2C2C;
+    --topbar-bg: #333333;
+    --text: #F5F5F5;
+    --btn-bg: #FFB347;
+    --btn-text: #1E1E1E;
+    --btn-hover: #FFA500;
+    --border: #FFD580;
+}
+
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
 body {
-    background-color: #967c37;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* ---------- TOP BAR ---------- */
+#topBar {
+    width: 100%;
+    background-color: var(--topbar-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* title left, toggle button right */
+    color: var(--text);
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+#topBar h1 {
+    font-size: 1.8rem;
+}
+
+/* ---------- DARK/LIGHT TOGGLE BUTTON ---------- */
+#btnToggleMode {
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#btnToggleMode:hover {
+    background-color: var(--btn-hover);
+    transform: scale(1.05);
+}
+
+/* ---------- FACT CONTAINER ---------- */
+#containerpFacts {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    max-width: 400px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-top: 1.5rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* ---------- FACT BUTTON ---------- */
+#btnFacts {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    color: var(--btn-text);
+    background-color: var(--btn-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin: 10px 0;
+}
+
+#btnFacts:hover {
+    background-color: var(--btn-hover);
+    transform: scale(1.05);
+}
+
+/* ---------- FACT TEXT ---------- */
+#pFacts {
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: center;
 }
